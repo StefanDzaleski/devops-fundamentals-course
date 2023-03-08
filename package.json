@@ -1,0 +1,23 @@
+{
+  "name": "devops-fundamentals-course",
+  "version": "1.0.0",
+  "description": "Devops fundamentals course project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanDzaleski/devops-fundamentals-course.git"
+  },
+  "author": "Stefan Djaleski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StefanDzaleski/devops-fundamentals-course/issues"
+  },
+  "homepage": "https://github.com/StefanDzaleski/devops-fundamentals-course#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4"
+  }
+}
