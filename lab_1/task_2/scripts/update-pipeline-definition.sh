@@ -125,23 +125,19 @@ while [ $# -ge 1 ] && [ -n $1 ]; do
   case $1 in
     --branch)
       branch=$2
-      updatebranch
-      echo "branch";;
+      updatebranch;;
     --owner)
       owner=$2
-      updateowner
-      echo "owner";;
+      updateowner;;
     --repo)
       repo=$2
-      echo "repo";;
+      updaterepo;;
     --poll-for-source-changes)
       poll=$2
-      updatepoll
-      echo "poll";;
+      updatepoll;;
     --configuration)
       configuration=$2
-      updateconfiguration
-      echo "config";;
+      updateconfiguration;;
     *)
       break
   esac
