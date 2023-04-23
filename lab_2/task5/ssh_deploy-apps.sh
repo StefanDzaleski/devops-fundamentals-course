@@ -4,7 +4,6 @@ SERVER_HOST_DIR=$(pwd)/calorie-calculator-backend
 CLIENT_HOST_DIR=$(pwd)/calorie-calculator-frontend
 CLIENT_NGINX_CONF=$(pwd)/lab2_client.conf
 
-# destination folder names can be changed
 SERVER_REMOTE_DIR=/var/app/lab2_server
 CLIENT_REMOTE_DIR=/var/www/lab2_client
 CLIENT_REMOTE_CONF=/etc/nginx/conf.d
@@ -42,4 +41,3 @@ ssh rhhost  "systemctl start nginx"
 ssh rhhost "cd $SERVER_REMOTE_DIR && npm i && pm2 start index.js"
 echo "---> Services have been started <---"
 
-# ssl certificates
