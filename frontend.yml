@@ -1,0 +1,28 @@
+image: node:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+run_tests:
+  stage: test
+  before_script:
+    - echo 'npm install'
+  script:
+    - echo 'npm run test'
+    - echo 'npm run lint'
+    - echo 'npm audit'
+
+run_build:
+  stage: build
+  before_script:
+    - echo 'npm install'
+  script:
+    - echo 'npm run build'
+
+deploy:
+  stage: deploy
+  script:
+    - echo 'ssh into server'
+    - echo 'start nginx'
