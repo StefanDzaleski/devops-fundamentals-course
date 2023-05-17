@@ -1,0 +1,3 @@
+For the following task I am using my custom frontend and backend apps that can be found here:
+- https://github.com/StefanDzaleski/calorie-calculator-frontend
+- https://github.com/StefanDzaleski/calorie-calculator-backend
