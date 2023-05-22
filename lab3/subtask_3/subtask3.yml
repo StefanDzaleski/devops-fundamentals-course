@@ -1,0 +1,31 @@
+image: node:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+run_tests:
+  stage: test
+  before_script:
+    - npm install
+  script:
+    - npm run test
+    - npm run lint
+    - npm audit
+
+run_build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  environment:
+    name: push-to-registry
+  variables:
+    IMAGE_NAME: stefandjaleski/lab3
+    IMAGE_TAG: v1
+  script:
+    # Had issues using Docker to push the image to a registry, therefore I found an alternative in kaniko
+    # It uses the credentials from the variables set in Gitlab to authenticate, build, and push the image to dockerhub
+    - mkdir -p /kaniko/.docker
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $IMAGE_NAME:$IMAGE_TAG
