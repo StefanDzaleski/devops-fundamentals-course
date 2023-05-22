@@ -1,0 +1,24 @@
+image: node:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+run_tests:
+  stage: test
+  before_script:
+    - npm install
+  script:
+    - npm run test
+    - npm run lint
+    - npm audit
+
+run_build:
+  stage: build
+  before_script:
+    - npm install
+  script:
+    # This was neccessary due to an error I was encountering
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - npm run build
